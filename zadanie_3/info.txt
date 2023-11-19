@@ -1,0 +1,3 @@
+Mianowicie, proszę abyście nie kopiowali do sprawozdań wyników wprost z konsoli, albo co gorsza nie robili skrinów konsoli z wynikami. Bardzo proszę o jakieś schludne zestawienie obliczonych wyników (współrzędnych punktów 2, 3, 4, 1*), np. w tabelce.
+
+Kluczowa sprawa, abyście te współrzędne zapisali w postaci: stopnie minuty sekundy, np. 52⁰21'43,12345" - precyzja zapisu współrzędnych szerokości i długości geodezyjnej do 0,00001" części sekundy jest równoznaczna z zapisem położenia punktu z poziomą dokładnością 1mm i to jest dokładność obliczeń, której chcemy się tutaj trzymać (dla azymutu taką oczekiwaną precyzją zapisu azymutu będzie do 0,001"). Bardzo proszę o zastosowanie się do tych wytycznych w sprawozdaniu.
