@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Dec  3 14:08:04 2022
+
+@author: mgrzy
+"""
+
+import numpy as np
+
+
+
+import gpxpy
+import gpxpy.gpx
+import pandas as pd
+
+def gpx2df(gpx_file_name, new_file_name = 'route_df.csv'):
+    with open(gpx_file_name, 'r') as gpx_file:
+        gpx = gpxpy.parse(gpx_file)
+    route_info = []
+    
+    for track in gpx.tracks:
+        for segment in track.segments:
+            for point in segment.points:
+                route_info.append({
+                    'latitude': point.latitude,
+                    'longitude': point.longitude,
+                    'elevation': point.elevation,
+                    'time':point.time
+                })
+    
+    route_df = pd.DataFrame(route_info)
+    
+    save_df(route_df, new_file_name)
+    
+
+def save_df(route_df, new_file_name= 'route_df.csv'):
+    route_df.to_csv(new_file_name, index=False)
+    print(f'file saved to {new_file_name}')
+def read_route_df(file):
+    route_df = pd.read_csv(file)
+    return route_df
