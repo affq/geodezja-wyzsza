@@ -1,4 +1,4 @@
-# geodezja_wyzsza
+# wybrane zagadnienia geodezji wyższej
 to repozytorium zawiera projekty z <i><b>WDGW</b></i>:
 <li>Zadanie 1: Transformacja współrzędnych gwiazdy z układu równikowego do horyzontalnego</li>
 <li>Zadanie 2: Transformacja współrzędnych elipsoidalnych lecącego samolotu do układu lokalnego</li>
