@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>zadanie_3</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>zadanie_4</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14580,11 +14580,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Zadanie-3---Przeniesienie-wsp%C3%B3%C5%82rzednych-geodezyjnych-na-powierzchni%C4%99-elipsoidy-obrotowej">Zadanie 3 - Przeniesienie wsp&#243;&#322;rzednych geodezyjnych na powierzchni&#281; elipsoidy obrotowej<a class="anchor-link" href="#Zadanie-3---Przeniesienie-wsp%C3%B3%C5%82rzednych-geodezyjnych-na-powierzchni%C4%99-elipsoidy-obrotowej">&#182;</a></h1><li>Autor: Adrian Fabisiewicz</li>
+<h1 id="Zadanie-4---Odwzorowanie-Gaussa-Kr%C3%BCgera:-uk%C5%82ady-wsp%C3%B3%C5%82rz%C4%99dnych-p%C5%82askich-stosowanych-w-Polsce">Zadanie 4 - Odwzorowanie Gaussa-Kr&#252;gera: uk&#322;ady wsp&#243;&#322;rz&#281;dnych p&#322;askich stosowanych w Polsce<a class="anchor-link" href="#Zadanie-4---Odwzorowanie-Gaussa-Kr%C3%BCgera:-uk%C5%82ady-wsp%C3%B3%C5%82rz%C4%99dnych-p%C5%82askich-stosowanych-w-Polsce">&#182;</a></h1><li>Autor: Adrian Fabisiewicz</li>
 <li>Numer indeksu: 328935</li>
-<li>Numer: 4</li>
-<li>φ<sub>1</sub> = 51°00′00.00000”</li>
-<li>λ<sub>1</sub> = 19°00′00.00000”</li>
 </div>
 </div>
 </div>
@@ -14595,7 +14592,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Cel-%C4%87wiczenia">Cel &#263;wiczenia<a class="anchor-link" href="#Cel-%C4%87wiczenia">&#182;</a></h2><p>Celem ćwiczenia jest przeniesienie współrzędnych geodezyjnych na powierzchni elipsoidy obrotowej. Na podstawie danej szerokości i długości geograficznej punktu pierwszego, a także danych azymutów oraz długości trzech linii geodezyjnych wyliczyć współrzędne punktów 2, 3 i 4 na powierzchni elipsoidy obrotowej. Do obliczeń wykorzystano algorytm Kivioja. Należało stwierdzić, czy figura po obliczeniu wszystkich współrzędnych się zamknie oraz  porównać różnice współrzędnych po ich przeniesieniu. Ostatnim etapem było przedstawienie figury, stworzonej przez obliczone punkty, na mapie, a także obliczenie jej pola powierzchni z wykorzystaniem biblioteki <i>pyproj</i>.</p>
+<h2 id="Cel-%C4%87wiczenia">Cel &#263;wiczenia<a class="anchor-link" href="#Cel-%C4%87wiczenia">&#182;</a></h2><p>Celem ćwiczenia jest obliczenie współrzędnych płaskich w układach PL-1992 oraz PL-2000 czterech punktów, których współrzędne geodezyjne $\phi$, $\lambda$ zostały wcześniej wyznaczone na podstawie zadania wprost przeniesienia współrzędnych na elipsoidzie. Należało również wyznaczyć redukcję długości, obliczonych na powierzchni układu PL-2000 oraz PL-1992, na powierzchnię elipsoidy. Na koniec, stosując wzory Gaussa, należało wyznaczyć pole powierzchni czworoboku na płaszczyźnie układów PL-1992 oraz PL-2000. Z wykorzystaniem pythonowej biblioteki <i>pyproj</i> należało przeliczyć współrzędne punktów do układu równopolowego PL-LAEA oraz policzyć pole powierzchni w tym układzie. Mając te dane można było wykonać odpowiednie analizy i porównania i wyciągnąć odpowiednie wnioski.</p>
 
 </div>
 </div>
@@ -14607,37 +14604,35 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Dane-do-zadania">Dane do zadania<a class="anchor-link" href="#Dane-do-zadania">&#182;</a></h2><p>Dany były współrzędne geodezyjne punktu początkowego P<sub>1</sub>, wynoszące:</p>
-<li>φ<sub>1</sub> = 51°00′00.00000”</li>
-<li>λ<sub>1</sub> = 19°00′00.00000”</li><p>Podano również azymuty oraz długości trzech lini geodezyjnych:</p>
+<h2 id="Dane-do-zadania">Dane do zadania<a class="anchor-link" href="#Dane-do-zadania">&#182;</a></h2><p>Dany były współrzędne geodezyjne φ, λ czterech punktów, które zostały wyznaczone w zadaniu wprost przeniesienia współrzędnych na elipsoidzie metodą Kivioji.</p>
 <table border="1">
     <thead>
         <tr>
-            <th></th>
-            <th>długość <i>s</i> [km] </th>
-            <th>azymut <i>A</i> [°]</th>
+            <th>numer punktu</th>
+            <th>φ</th>
+            <th>λ</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>1-2</td>
-            <td>40</td>
-            <td>0°00′00.000</td>
+            <td>1</td>
+            <td>51°00′00.00000”</td>
+            <td>19°00′00.00000”</td>
         </tr>
         <tr>
-            <td>2-3</td>
-            <td>100</td>
-            <td>90°00′00.000</td>
+            <td>2</td>
+            <td>51°21'34.36205"</td>
+            <td>19°00'00.00000"</td>
         </tr>
         <tr>
-            <td>3-4</td>
-            <td>40</td>
-            <td>180°00′00.000</td>
+            <td>3</td>
+            <td>51°21'02.70063"</td>
+            <td>20°26'07.76249"</td>
         </tr>
         <tr>
-            <td>4-1*</td>
-            <td>100</td>
-            <td>270°00′00.000</td>
+            <td>4</td>
+            <td>50°59'28.33662"</td>
+            <td>20°26'07.76249"</td>
         </tr>
     </tbody>
 </table>
@@ -14662,42 +14657,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Zapisanie-danych-u%C5%BCywanych-w-zadaniu">Zapisanie danych u&#380;ywanych w zadaniu<a class="anchor-link" href="#Zapisanie-danych-u%C5%BCywanych-w-zadaniu">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">nr</span> <span class="o">=</span> <span class="mi">4</span>
-
-<span class="n">point_1_phi_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="n">nr</span> <span class="o">*</span> <span class="mi">15</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span> 
-<span class="n">point_1_lam_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">18</span> <span class="o">+</span> <span class="n">nr</span> <span class="o">*</span> <span class="mi">15</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span>
-
-<span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40000</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="mi">40000</span><span class="p">,</span> <span class="mi">100000</span><span class="p">]</span> <span class="c1">#odległości w metrach kolejno 1-2, 2-3, 3-4, 4-1*</span>
-<span class="n">az</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">270</span><span class="p">])</span> <span class="c1">#azymuty w radianach kolejno 1-2, 2-3, 3-4, 4-1*</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Implementacja-funkcji,-realizuj%C4%85cej-algorytm-Kivioja">Implementacja funkcji, realizuj&#261;cej algorytm Kivioja<a class="anchor-link" href="#Implementacja-funkcji,-realizuj%C4%85cej-algorytm-Kivioja">&#182;</a></h3><p>Funkcja jako argumenty przyjmuje szerokość i długość geograficzną pierwszego punktu oraz długość i azymut linii geodezyjnej. Akceptuje dane w radianach oraz metrach. Zwraca natomiast szerokość i długość geograficzną kolejnego punktu, a także azymut odwrotny linii w radianach.</p>
+<h3 id="Zapisanie-danych-u%C5%BCywanych-w-zadaniu">Zapisanie danych u&#380;ywanych w zadaniu<a class="anchor-link" href="#Zapisanie-danych-u%C5%BCywanych-w-zadaniu">&#182;</a></h3><p>Aby nie zapisywać wielokrotnie tych samych stałych zmiennych, zapisałem je na początku kodu. Są to między innymi takie dane jak: dłuższa i krótsza półoś elipsoidy czy pierwszy i drugi mimośród.</p>
 
 </div>
 </div>
@@ -14710,44 +14670,18 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">6378137</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
 <span class="n">e2</span> <span class="o">=</span> <span class="mf">0.00669438002290</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">6378137</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e2</span><span class="p">)</span>
+<span class="n">eprim2</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">b2</span><span class="p">)</span> <span class="o">/</span> <span class="n">b2</span>
 
-<span class="k">def</span> <span class="nf">Np</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
-    <span class="n">N</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">N</span>
-
-<span class="k">def</span> <span class="nf">Mp</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e2</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">e2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">M</span>
-
-<span class="k">def</span> <span class="nf">kivioj</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">az</span><span class="p">):</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">s</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="n">n</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">N_i</span> <span class="o">=</span> <span class="n">Np</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
-        <span class="n">M_i</span> <span class="o">=</span> <span class="n">Mp</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
-
-        <span class="n">dphi_i</span> <span class="o">=</span> <span class="n">ds</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">az</span><span class="p">)</span><span class="o">/</span><span class="n">M_i</span>
-        <span class="n">dA_i</span> <span class="o">=</span> <span class="n">ds</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">az</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">/</span><span class="n">N_i</span>
-
-        <span class="n">phi_im</span> <span class="o">=</span> <span class="n">phi</span> <span class="o">+</span> <span class="n">dphi_i</span><span class="o">/</span><span class="mi">2</span>
-        <span class="n">az_im</span> <span class="o">=</span> <span class="n">az</span> <span class="o">+</span> <span class="n">dA_i</span><span class="o">/</span><span class="mi">2</span>
-
-        <span class="n">N_i</span> <span class="o">=</span> <span class="n">Np</span><span class="p">(</span><span class="n">phi_im</span><span class="p">)</span>
-        <span class="n">M_i</span> <span class="o">=</span> <span class="n">Mp</span><span class="p">(</span><span class="n">phi_im</span><span class="p">)</span>
-
-        <span class="n">dphi_i</span> <span class="o">=</span> <span class="n">ds</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">az_im</span><span class="p">)</span><span class="o">/</span><span class="n">M_i</span>
-        <span class="n">dA_i</span> <span class="o">=</span> <span class="n">ds</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">az_im</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">phi_im</span><span class="p">)</span><span class="o">/</span><span class="n">N_i</span>
-        <span class="n">dlam_i</span> <span class="o">=</span> <span class="n">ds</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">az_im</span><span class="p">)</span><span class="o">/</span><span class="n">N_i</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi_im</span><span class="p">)</span>
-
-        <span class="n">phi</span> <span class="o">=</span> <span class="n">phi</span> <span class="o">+</span> <span class="n">dphi_i</span>
-        <span class="n">lam</span> <span class="o">=</span> <span class="n">lam</span> <span class="o">+</span> <span class="n">dlam_i</span>
-        <span class="n">az</span> <span class="o">=</span> <span class="n">az</span> <span class="o">+</span> <span class="n">dA_i</span>
-
-    <span class="n">az_odw</span> <span class="o">=</span> <span class="p">(</span><span class="n">az</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">phi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">az_odw</span>
+<span class="n">A0</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">e2</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">e2</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">64</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">e2</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">256</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span> <span class="o">*</span> <span class="p">(</span><span class="n">e2</span> <span class="o">+</span> <span class="n">e2</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">15</span><span class="o">*</span><span class="n">e2</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">128</span><span class="p">)</span>
+<span class="n">A4</span> <span class="o">=</span> <span class="mi">15</span><span class="o">/</span><span class="mi">256</span> <span class="o">*</span> <span class="p">(</span><span class="n">e2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">e2</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">A6</span> <span class="o">=</span> <span class="mi">35</span><span class="o">*</span><span class="n">e2</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3072</span>
 </pre></div>
 
      </div>
@@ -14762,10 +14696,55 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Obliczenie-kolejnych-wierzcho%C5%82k%C3%B3w,-z-wykorzystaniem-utworzonej-funkcji">Obliczenie kolejnych wierzcho&#322;k&#243;w, z wykorzystaniem utworzonej funkcji<a class="anchor-link" href="#Obliczenie-kolejnych-wierzcho%C5%82k%C3%B3w,-z-wykorzystaniem-utworzonej-funkcji">&#182;</a></h3>
+<h3 id="Stworzenie-funkcji-na-podstawie-algorytmu-przeliczenia-wsp%C3%B3%C5%82rz%C4%99dnych-%CF%86-i-%CE%BB-na-p%C5%82aszczyzn%C4%99-odwzorowania-Gaussa-Kr%C3%BCgera---przeliczenie-wprost-(xgk,-ygk)-=-f(%CF%86,-%CE%BB)">Stworzenie funkcji na podstawie algorytmu przeliczenia wsp&#243;&#322;rz&#281;dnych &#966; i &#955; na p&#322;aszczyzn&#281; odwzorowania Gaussa-Kr&#252;gera - przeliczenie wprost (x<sub>gk</sub>, y<sub>gk</sub>) = f(&#966;, &#955;)<a class="anchor-link" href="#Stworzenie-funkcji-na-podstawie-algorytmu-przeliczenia-wsp%C3%B3%C5%82rz%C4%99dnych-%CF%86-i-%CE%BB-na-p%C5%82aszczyzn%C4%99-odwzorowania-Gaussa-Kr%C3%BCgera---przeliczenie-wprost-(xgk,-ygk)-=-f(%CF%86,-%CE%BB)">&#182;</a></h3><p>Funkcja jako argumenty przyjmuje współrzędne geodezyjne φ i λ oraz λ<sub>0</sub>, czyli odpowiedni południk osiowy układu. Zwraca współrzędne płaskie x<sub>gk</sub> i y<sub>gk</sub> w układzie Gaussa-Krügera.</p>
+
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">to_gk</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">lam0</span><span class="p">):</span>
+    <span class="n">fi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>
+    <span class="n">e2</span> <span class="o">=</span> <span class="mf">0.0066943800290</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">6378137</span>
+
+    <span class="n">b2</span> <span class="o">=</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e2</span><span class="p">)</span>
+    <span class="n">e2_prim</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">b2</span><span class="p">)</span> <span class="o">/</span> <span class="n">b2</span>
+    <span class="n">lam0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">lam0</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">eta2</span> <span class="o">=</span> <span class="n">e2_prim</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">delta_lam</span> <span class="o">=</span> <span class="n">lam</span> <span class="o">-</span> <span class="n">lam0</span>
+
+    <span class="n">A0</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">e2</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">e2</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">64</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">e2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">256</span>
+    <span class="n">A2</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">*</span> <span class="p">(</span><span class="n">e2</span> <span class="o">+</span> <span class="n">e2</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">15</span> <span class="o">*</span> <span class="n">e2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">128</span><span class="p">)</span>
+    <span class="n">A4</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">/</span> <span class="mi">256</span> <span class="o">*</span> <span class="p">(</span><span class="n">e2</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">e2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">A6</span> <span class="o">=</span> <span class="mi">35</span> <span class="o">*</span> <span class="n">e2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">3072</span>
+
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">A0</span> <span class="o">*</span> <span class="n">fi</span> <span class="o">-</span> <span class="n">A2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">fi</span><span class="p">)</span> <span class="o">+</span> <span class="n">A4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">fi</span><span class="p">)</span> <span class="o">-</span> <span class="n">A6</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">fi</span><span class="p">))</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">+</span> <span class="n">delta_lam</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">delta_lam</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">12</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">-</span>
+        <span class="n">t</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">eta2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">eta2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">delta_lam</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">360</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">61</span> <span class="o">-</span> <span class="mi">58</span> <span class="o">*</span> <span class="n">t</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">t</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">+</span>
+        <span class="mi">270</span> <span class="o">*</span> <span class="n">eta2</span> <span class="o">-</span> <span class="mi">330</span> <span class="o">*</span> <span class="n">eta2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">delta_lam</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span>
+                <span class="mi">1</span> <span class="o">+</span> <span class="n">delta_lam</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">eta2</span><span class="p">)</span> <span class="o">+</span> <span class="n">delta_lam</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">120</span>
+                <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">18</span> <span class="o">*</span> <span class="n">t</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">t</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">14</span> <span class="o">*</span> <span class="n">eta2</span> <span class="o">-</span> <span class="mi">58</span> <span class="o">*</span> <span class="n">eta2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14773,8 +14752,129 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Poniższa pętla przelicza współrzędne każdego punktu na elipsoidzie oraz zapisuje je w tablicy.</p>
+<h3 id="Funkcja-wykonuj%C4%85ca-przeliczenie-odwrotne:-(%CF%86,-%CE%BB)-=-f-(xgk,-ygk)">Funkcja wykonuj&#261;ca przeliczenie odwrotne: (&#966;, &#955;) = f (x<sub>gk</sub>, y<sub>gk</sub>)<a class="anchor-link" href="#Funkcja-wykonuj%C4%85ca-przeliczenie-odwrotne:-(%CF%86,-%CE%BB)-=-f-(xgk,-ygk)">&#182;</a></h3><p>Funkcja jako argumenty przyjmuje współrzędne płaskie x<sub>gk</sub> i y<sub>gk</sub> oraz λ<sub>0</sub>, czyli odpowiedni południk osiowy układu. Zwraca współrzędne geodezyjne φ i λ.</p>
 
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">from_gk</span><span class="p">(</span><span class="n">xgk</span><span class="p">,</span> <span class="n">ygk</span><span class="p">,</span> <span class="n">lam0</span><span class="p">):</span>
+    <span class="n">fi</span> <span class="o">=</span> <span class="n">xgk</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">A0</span><span class="p">)</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">A0</span> <span class="o">*</span> <span class="n">fi</span> <span class="o">-</span> <span class="n">A2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">fi</span><span class="p">)</span> <span class="o">+</span> <span class="n">A4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">fi</span><span class="p">)</span> <span class="o">-</span> <span class="n">A6</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">fi</span><span class="p">))</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">fi1</span> <span class="o">=</span> <span class="n">fi</span> <span class="o">+</span> <span class="p">(</span><span class="n">xgk</span> <span class="o">-</span> <span class="n">sigma</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">A0</span><span class="p">)</span>
+
+        <span class="n">N</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">fi1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e2</span><span class="p">)</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">fi1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">fi1</span><span class="p">)</span>
+        <span class="n">eta2</span> <span class="o">=</span> <span class="n">eprim2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">A0</span> <span class="o">*</span> <span class="n">fi1</span> <span class="o">-</span> <span class="n">A2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">fi1</span><span class="p">)</span> <span class="o">+</span> <span class="n">A4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">fi1</span><span class="p">)</span> <span class="o">-</span> <span class="n">A6</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">fi1</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">fi1</span> <span class="o">-</span> <span class="n">fi</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mf">0.000001</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">):</span>
+            <span class="k">break</span>
+
+        <span class="n">fi</span> <span class="o">=</span> <span class="n">fi1</span>
+
+    <span class="n">fi</span> <span class="o">=</span> <span class="n">fi1</span> <span class="o">-</span> <span class="p">((</span><span class="n">ygk</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">M</span> <span class="o">*</span> <span class="n">N</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">ygk</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">N</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">eta2</span> <span class="o">-</span> <span class="mi">9</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">eta2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">eta2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">ygk</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">360</span> <span class="o">*</span> <span class="n">N</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">61</span> <span class="o">+</span> <span class="mi">90</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">45</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span>
+
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">lam0</span> <span class="o">+</span> <span class="p">(</span><span class="n">ygk</span> <span class="o">/</span> <span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi</span><span class="p">)))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">ygk</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">N</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">eta2</span><span class="p">)</span> <span class="o">+</span> <span class="n">ygk</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">120</span> <span class="o">*</span> <span class="n">N</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">28</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">24</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">eta2</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">eta2</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">fi</span><span class="p">,</span> <span class="n">lam</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Funkcja,-obliczaj%C4%85ca-wsp%C3%B3%C5%82rz%C4%99dne-p%C5%82askie-punktu-w-uk%C5%82adzie-PL-2000">Funkcja, obliczaj&#261;ca wsp&#243;&#322;rz&#281;dne p&#322;askie punktu w uk&#322;adzie PL-2000<a class="anchor-link" href="#Funkcja,-obliczaj%C4%85ca-wsp%C3%B3%C5%82rz%C4%99dne-p%C5%82askie-punktu-w-uk%C5%82adzie-PL-2000">&#182;</a></h3><p>Funkcja jako argumenty przyjmuje współrzędne geodezyjne φ i λ oraz λ<sub>0</sub>, czyli odpowiedni południk osiowy układu. W środku wywołuje funkcję przeliczającą współrzędne geodezyjne na płaskie w układzie Gaussa-Krügera. Sprawdza, w którym z 4 pasów południkowych układu PL-2000 znajduje się punkt, a następnie oblicza współrzędne płaskie w układzie PL-2000. Zwraca współrzędne płaskie x<sub>2000</sub> i y<sub>2000</sub> w układzie PL-2000.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">to_2000</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">lam0</span><span class="p">):</span>
+    <span class="n">xgk</span><span class="p">,</span> <span class="n">ygk</span> <span class="o">=</span> <span class="n">to_gk</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">lam0</span><span class="p">)</span>
+    <span class="n">m0</span> <span class="o">=</span> <span class="mf">0.999923</span>
+
+    <span class="n">nr</span> <span class="o">=</span> <span class="mi">6</span>
+
+    <span class="n">x2000</span> <span class="o">=</span> <span class="n">m0</span> <span class="o">*</span> <span class="n">xgk</span>
+    <span class="n">y2000</span> <span class="o">=</span> <span class="n">m0</span> <span class="o">*</span> <span class="n">ygk</span> <span class="o">+</span> <span class="n">nr</span> <span class="o">*</span> <span class="mi">1000000</span> <span class="o">+</span> <span class="mi">500000</span>
+
+    <span class="k">return</span> <span class="n">x2000</span><span class="p">,</span> <span class="n">y2000</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Funkcja,-obliczaj%C4%85ca-wsp%C3%B3%C5%82rz%C4%99dne-p%C5%82askie-punktu-w-uk%C5%82adzie-PL-1992">Funkcja, obliczaj&#261;ca wsp&#243;&#322;rz&#281;dne p&#322;askie punktu w uk&#322;adzie PL-1992<a class="anchor-link" href="#Funkcja,-obliczaj%C4%85ca-wsp%C3%B3%C5%82rz%C4%99dne-p%C5%82askie-punktu-w-uk%C5%82adzie-PL-1992">&#182;</a></h3><p>Funkcja jako argumenty przyjmuje współrzędne geodezyjne φ i λ oraz λ<sub>0</sub>, czyli odpowiedni południk osiowy układu. W środku wywołuje funkcję przeliczającą współrzędne geodezyjne na płaskie w układzie Gaussa-Krügera. Następnie oblicza współrzędne płaskie w układzie PL-1992. Zwraca współrzędne płaskie x<sub>1992</sub> i y<sub>1992</sub> w układzie PL-1992.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">to_1992</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">lam0</span><span class="p">):</span>
+    <span class="n">xgk</span><span class="p">,</span> <span class="n">ygk</span> <span class="o">=</span> <span class="n">to_gk</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">lam0</span><span class="p">)</span>
+    <span class="n">m0</span> <span class="o">=</span> <span class="mf">0.9993</span>
+
+    <span class="n">x1992</span> <span class="o">=</span> <span class="n">m0</span> <span class="o">*</span> <span class="n">xgk</span> <span class="o">-</span> <span class="mi">5300000</span>
+    <span class="n">y1992</span> <span class="o">=</span> <span class="n">m0</span> <span class="o">*</span> <span class="n">ygk</span> <span class="o">+</span> <span class="mi">500000</span>
+
+    <span class="k">return</span> <span class="n">x1992</span><span class="p">,</span> <span class="n">y1992</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Obliczenie-wsp%C3%B3%C5%82rz%C4%99dnych-punkt%C3%B3w-w-uk%C5%82adach-PL-1992,-PL-2000-oraz-Gaussa-Kr%C3%BCgera">Obliczenie wsp&#243;&#322;rz&#281;dnych punkt&#243;w w uk&#322;adach PL-1992, PL-2000 oraz Gaussa-Kr&#252;gera<a class="anchor-link" href="#Obliczenie-wsp%C3%B3%C5%82rz%C4%99dnych-punkt%C3%B3w-w-uk%C5%82adach-PL-1992,-PL-2000-oraz-Gaussa-Kr%C3%BCgera">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14786,22 +14886,40 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># s = [40000, 100000, 40000, 100000]</span>
-<span class="c1"># az = np.deg2rad([0, 90, 180, 270])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">51.0</span><span class="p">,</span> <span class="mf">19.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">51.35954501388889</span><span class="p">,</span> <span class="mf">19.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">51.350750175</span><span class="p">,</span> <span class="mf">20.435489580555554</span><span class="p">],</span> <span class="p">[</span><span class="mf">50.991204616666664</span><span class="p">,</span> <span class="mf">20.435489580555554</span><span class="p">]]</span>
 
-<span class="n">current_phi</span> <span class="o">=</span> <span class="n">point_1_phi_rad</span>
-<span class="n">current_lam</span> <span class="o">=</span> <span class="n">point_1_lam_rad</span>
+<span class="n">gk00</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">gk92</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">pl2000</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">pl1992</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="n">new_points_rad</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-    <span class="n">current_phi</span><span class="p">,</span> <span class="n">current_lam</span><span class="p">,</span> <span class="n">az_odw</span> <span class="o">=</span> <span class="n">kivioj</span><span class="p">(</span><span class="n">current_phi</span><span class="p">,</span> <span class="n">current_lam</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">az</span><span class="p">[</span><span class="n">p</span><span class="p">])</span>
-    <span class="n">new_points_rad</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">current_phi</span><span class="p">,</span> <span class="n">current_lam</span><span class="p">,</span> <span class="n">az_odw</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+    <span class="n">fi</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="n">new_points_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">)</span>
-<span class="n">new_points_deg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punkt numer&quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">point</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1">#gk pl-2000</span>
+    <span class="n">xgk</span><span class="p">,</span> <span class="n">ygk</span> <span class="o">=</span> <span class="n">to_gk</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+    <span class="n">gk00</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">xgk</span><span class="p">,</span> <span class="n">ygk</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GK00: &quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">xgk</span><span class="p">),</span> <span class="s1">&#39;</span><span class="si">{0:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ygk</span><span class="p">))</span>
 
-<span class="nb">print</span> <span class="p">(</span><span class="o">*</span><span class="n">new_points_deg</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">x2000</span><span class="p">,</span> <span class="n">y2000</span> <span class="o">=</span> <span class="n">to_2000</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+    <span class="n">pl2000</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x2000</span><span class="p">,</span> <span class="n">y2000</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2000: &quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x2000</span><span class="p">),</span> <span class="s1">&#39;</span><span class="si">{0:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y2000</span><span class="p">))</span>
+
+    <span class="c1">#gk pl-1992</span>
+    <span class="n">xgk92</span><span class="p">,</span> <span class="n">ygk92</span> <span class="o">=</span> <span class="n">to_gk</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+    <span class="n">gk92</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">xgk92</span><span class="p">,</span> <span class="n">ygk92</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GK92: &quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">xgk92</span><span class="p">),</span> <span class="s1">&#39;</span><span class="si">{0:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ygk92</span><span class="p">))</span>
+
+
+    <span class="n">x1992</span><span class="p">,</span> <span class="n">y1992</span> <span class="o">=</span> <span class="n">to_1992</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+    <span class="n">pl1992</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x1992</span><span class="p">,</span> <span class="n">y1992</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1992: &quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x1992</span><span class="p">),</span> <span class="s1">&#39;</span><span class="si">{0:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y1992</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14823,10 +14941,30 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[ 51.35954501  19.         180.        ]
-[ 51.35075017  20.43548958 271.12118602]
-[50.99120462 20.43548958  0.        ]
-[50.98252402 19.01138737 88.89344757]
+<pre>Punkt numer 1
+GK00:  5652561.812 70196.940
+2000:  5652126.564 6570191.535
+GK92:  5652085.723 0.000
+1992:  348129.263 500000.000
+
+Punkt numer 2
+GK00:  5692560.513 69652.977
+2000:  5692122.186 6569647.614
+GK92:  5692085.723 0.000
+1992:  388101.263 500000.000
+
+Punkt numer 3
+GK00:  5693924.194 169662.276
+2000:  5693485.762 6669649.212
+GK92:  5692085.723 100004.092
+1992:  388101.263 599934.089
+
+Punkt numer 4
+GK00:  5653931.898 170987.382
+2000:  5653496.546 6670974.216
+GK92:  5652088.396 100784.906
+1992:  348131.934 600714.357
+
 </pre>
 </div>
 </div>
@@ -14835,6 +14973,17 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Obliczenie-d%C5%82ugo%C5%9Bci-odcink%C3%B3w-mi%C4%99dzy-punktami-na-p%C5%82aszczyznach-uk%C5%82ad%C3%B3w-PL-1992,-PL-2000-oraz-Gaussa-Kr%C3%BCgera">Obliczenie d&#322;ugo&#347;ci odcink&#243;w mi&#281;dzy punktami na p&#322;aszczyznach uk&#322;ad&#243;w PL-1992, PL-2000 oraz Gaussa-Kr&#252;gera<a class="anchor-link" href="#Obliczenie-d%C5%82ugo%C5%9Bci-odcink%C3%B3w-mi%C4%99dzy-punktami-na-p%C5%82aszczyznach-uk%C5%82ad%C3%B3w-PL-1992,-PL-2000-oraz-Gaussa-Kr%C3%BCgera">&#182;</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14843,37 +14992,27 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">rad2dms</span><span class="p">(</span><span class="n">rad</span><span class="p">):</span>
-    <span class="n">dd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span>
-    <span class="n">dd</span> <span class="o">=</span> <span class="n">dd</span>
-    <span class="n">deg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">dd</span><span class="p">))</span>
-    <span class="n">mnt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">((</span><span class="n">dd</span><span class="o">-</span><span class="n">deg</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span><span class="p">))</span>
-    <span class="n">sec</span> <span class="o">=</span> <span class="p">((</span><span class="n">dd</span><span class="o">-</span><span class="n">deg</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">-</span> <span class="n">mnt</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span>
-    <span class="n">dms</span> <span class="o">=</span> <span class="p">[</span><span class="n">deg</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">mnt</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sec</span><span class="p">)]</span>
-    <span class="k">return</span> <span class="n">dms</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">angle_formatter</span><span class="p">(</span><span class="n">degrees</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span><span class="p">):</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">degrees</span><span class="si">}</span><span class="s1">°</span><span class="si">{</span><span class="n">minutes</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="se">\&#39;</span><span class="si">{</span><span class="n">seconds</span><span class="si">:</span><span class="s1">0.5f</span><span class="si">}</span><span class="se">\&quot;</span><span class="s1">&#39;</span>
+<span class="n">distances_pl2000</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">distances_pl1992</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="n">point_2_phi_d</span><span class="p">,</span> <span class="n">point_2_phi_m</span><span class="p">,</span> <span class="n">point_2_phi_s</span> <span class="o">=</span> <span class="n">rad2dms</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">point_2_lam_d</span><span class="p">,</span> <span class="n">point_2_lam_m</span><span class="p">,</span> <span class="n">point_2_lam_s</span> <span class="o">=</span> <span class="n">rad2dms</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gk00</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">distances_pl2000</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="n">pl2000</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pl2000</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">distances_pl1992</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="n">pl1992</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pl1992</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="k">break</span>
+    <span class="n">distances_pl2000</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="n">pl2000</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pl2000</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">distances_pl1992</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="n">pl1992</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pl1992</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Współrzędne punktu 2 wynoszą </span><span class="si">{</span><span class="n">angle_formatter</span><span class="p">(</span><span class="n">point_2_phi_d</span><span class="p">,</span><span class="w"> </span><span class="n">point_2_phi_m</span><span class="p">,</span><span class="w"> </span><span class="n">point_2_phi_s</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">angle_formatter</span><span class="p">(</span><span class="n">point_2_lam_d</span><span class="p">,</span><span class="w"> </span><span class="n">point_2_lam_m</span><span class="p">,</span><span class="w"> </span><span class="n">point_2_lam_s</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Długości odcinków między punktami na płaszczyźnie PL2000:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distances_pl2000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
-<span class="n">point_3_phi_d</span><span class="p">,</span> <span class="n">point_3_phi_m</span><span class="p">,</span> <span class="n">point_3_phi_s</span> <span class="o">=</span> <span class="n">rad2dms</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">point_3_lam_d</span><span class="p">,</span> <span class="n">point_3_lam_m</span><span class="p">,</span> <span class="n">point_3_lam_s</span> <span class="o">=</span> <span class="n">rad2dms</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Współrzędne punktu 3 wynoszą </span><span class="si">{</span><span class="n">angle_formatter</span><span class="p">(</span><span class="n">point_3_phi_d</span><span class="p">,</span><span class="w"> </span><span class="n">point_3_phi_m</span><span class="p">,</span><span class="w"> </span><span class="n">point_3_phi_s</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">angle_formatter</span><span class="p">(</span><span class="n">point_3_lam_d</span><span class="p">,</span><span class="w"> </span><span class="n">point_3_lam_m</span><span class="p">,</span><span class="w"> </span><span class="n">point_3_lam_s</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-
-<span class="n">point_4_phi_d</span><span class="p">,</span> <span class="n">point_4_phi_m</span><span class="p">,</span> <span class="n">point_4_phi_s</span> <span class="o">=</span> <span class="n">rad2dms</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">point_4_lam_d</span><span class="p">,</span> <span class="n">point_4_lam_m</span><span class="p">,</span> <span class="n">point_4_lam_s</span> <span class="o">=</span> <span class="n">rad2dms</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Współrzędne punktu 4 wynoszą </span><span class="si">{</span><span class="n">angle_formatter</span><span class="p">(</span><span class="n">point_4_phi_d</span><span class="p">,</span><span class="w"> </span><span class="n">point_4_phi_m</span><span class="p">,</span><span class="w"> </span><span class="n">point_4_phi_s</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">angle_formatter</span><span class="p">(</span><span class="n">point_4_lam_d</span><span class="p">,</span><span class="w"> </span><span class="n">point_4_lam_m</span><span class="p">,</span><span class="w"> </span><span class="n">point_4_lam_s</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-
-<span class="n">point_1g_phi_d</span><span class="p">,</span> <span class="n">point_1g_phi_m</span><span class="p">,</span> <span class="n">point_1g_phi_s</span> <span class="o">=</span> <span class="n">rad2dms</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">point_1g_lam_d</span><span class="p">,</span> <span class="n">point_1g_lam_m</span><span class="p">,</span> <span class="n">point_1g_lam_s</span> <span class="o">=</span> <span class="n">rad2dms</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Współrzędne punktu 1* wynoszą </span><span class="si">{</span><span class="n">angle_formatter</span><span class="p">(</span><span class="n">point_1g_phi_d</span><span class="p">,</span><span class="w"> </span><span class="n">point_1g_phi_m</span><span class="p">,</span><span class="w"> </span><span class="n">point_1g_phi_s</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">angle_formatter</span><span class="p">(</span><span class="n">point_1g_lam_d</span><span class="p">,</span><span class="w"> </span><span class="n">point_1g_lam_m</span><span class="p">,</span><span class="w"> </span><span class="n">point_1g_lam_s</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Długości odcinków między punktami na płaszczyźnie PL1992:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distances_pl1992</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14895,10 +15034,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Współrzędne punktu 2 wynoszą 51°21&#39;34.36205&#34; 19°00&#39;0.00000&#34;.
-Współrzędne punktu 3 wynoszą 51°21&#39;2.70063&#34; 20°26&#39;7.76249&#34;.
-Współrzędne punktu 4 wynoszą 50°59&#39;28.33662&#34; 20°26&#39;7.76249&#34;.
-Współrzędne punktu 1* wynoszą 50°58&#39;57.08648&#34; 19°00&#39;40.99454&#34;.
+<pre>Długości odcinków między punktami na płaszczyźnie PL2000:
+[39999.32017877123, 100010.89433113993, 40011.16206806733, 100791.99213772782]
+
+Długości odcinków między punktami na płaszczyźnie PL1992:
+[39971.99990267865, 99934.08906411426, 39976.9448238994, 100714.35675931034]
+
 </pre>
 </div>
 </div>
@@ -14914,40 +15055,540 @@ Współrzędne punktu 1* wynoszą 50°58&#39;57.08648&#34; 19°00&#39;40.99454&#
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<table border="1">
-    <thead>
-        <tr>
-            <th>punkt</th>
-            <th>φ</th>
-            <th>λ</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>2</td>
-            <td>51°21'34.36205"</td>
-            <td>19°00'0.00000"</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>51°21'2.70063"</td>
-            <td>20°26'7.76249"</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>50°59'28.33662"</td>
-            <td>20°26'7.76249"</td>
-        </tr>
-        <tr>
-            <td>1*</td>
-            <td>50°58'57.08648"</td>
-            <td>19°00'40.99454"</td>
-        </tr>
-    </tbody>
+<h3 id="Obliczenie-redukcji-d%C5%82ugo%C5%9Bci">Obliczenie redukcji d&#322;ugo&#347;ci<a class="anchor-link" href="#Obliczenie-redukcji-d%C5%82ugo%C5%9Bci">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m0_1992</span> <span class="o">=</span> <span class="mf">0.9993</span>
+
+<span class="n">length_gk</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">distance</span> <span class="ow">in</span> <span class="n">distances_pl1992</span><span class="p">:</span>
+    <span class="n">length_gk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">distance</span> <span class="o">/</span> <span class="n">m0_1992</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Długości odcinków na płaszczyźnie GK w 1992:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">length_gk</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">middle_phis</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">middle_ms</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">middle_ns</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">middle_phis</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">middle_phis</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">middle_phis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">middle_phis</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">middle_phis</span><span class="p">:</span>
+    <span class="n">middle_ms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">middle_ns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">reductions_1992</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">rAB</span> <span class="o">=</span> <span class="n">distances_pl1992</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">gk92</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">gk92</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">gk92</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">gk92</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">middle_ms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">middle_ns</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rAB</span> <span class="o">=</span> <span class="n">distances_pl1992</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">gk92</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">gk92</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">gk92</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">gk92</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">middle_ms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">middle_ns</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">reductions_1992</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rAB</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Redukcje długości odcinków na płaszczyźnie GK w 1992:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reductions_1992</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Długości odcinków na płaszczyźnie GK w 1992:
+[39999.999902610485, 100004.09192846419, 40004.94828770079, 100784.90619364589]
+
+Redukcje długości odcinków na płaszczyźnie GK w 1992:
+[0.0, 4.088585643486725, 4.945327968503748, 4.18544909275307]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m0_2000</span> <span class="o">=</span> <span class="mf">0.999923</span>
+
+<span class="n">length_gk</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">distance</span> <span class="ow">in</span> <span class="n">distances_pl2000</span><span class="p">:</span>
+    <span class="n">length_gk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">distance</span> <span class="o">/</span> <span class="n">m0_2000</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Długości odcinków między punktami na płaszczyźnie GK w 2000:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">length_gk</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">middle_phis</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">middle_ms</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">middle_ns</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">middle_phis</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">middle_phis</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">middle_phis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">middle_phis</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">middle_phis</span><span class="p">:</span>
+    <span class="n">middle_ms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">middle_ns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">reductions_2000</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">rAB</span> <span class="o">=</span> <span class="n">distances_pl2000</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">gk00</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">gk00</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">gk00</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">gk00</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">middle_ms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">middle_ns</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rAB</span> <span class="o">=</span> <span class="n">distances_pl2000</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">gk00</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">gk00</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">gk00</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">gk00</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">middle_ms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">middle_ns</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">reductions_2000</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rAB</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Redukcje długości odcinków na płaszczyźnie GK w 2000:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reductions_2000</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Długości odcinków między punktami na płaszczyźnie GK w 2000:
+[40002.40036359923, 100018.59576301368, 40014.24316479102, 100799.75371876417]
+
+Redukcje długości odcinków na płaszczyźnie GK w 2000:
+[2.4003901628749897, 18.597144287750762, 14.246321969578071, 19.037862486166055]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Obliczenie-d%C5%82ugo%C5%9Bci-odcink%C3%B3w-mi%C4%99dzy-punktami-na-powierzchni-elipsoidy">Obliczenie d&#322;ugo&#347;ci odcink&#243;w mi&#281;dzy punktami na powierzchni elipsoidy<a class="anchor-link" href="#Obliczenie-d%C5%82ugo%C5%9Bci-odcink%C3%B3w-mi%C4%99dzy-punktami-na-powierzchni-elipsoidy">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">length_1992</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+    <span class="n">length_1992</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">length_gk</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">reductions_1992</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Długości odcinków na elipsoidzie w PL-1992:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">length_1992</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Długości odcinków na elipsoidzie w PL-1992:
+[40002.40036359923, 100014.5071773702, 40009.297836822516, 100795.56826967142]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">length_2000</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+    <span class="n">length_2000</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">length_gk</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">reductions_2000</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Długości odcinków na elipsoidzie w PL-2000:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">length_2000</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Długości odcinków na elipsoidzie w PL-2000:
+[39999.99997343635, 99999.99861872593, 39999.99684282144, 100780.71585627801]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Obliczenie-p%C3%B3l-powierzchni-czworoboku-na-p%C5%82aszczy%C5%BAnie-uk%C5%82ad%C3%B3w-PL-1992-oraz-PL-2000">Obliczenie p&#243;l powierzchni czworoboku na p&#322;aszczy&#378;nie uk&#322;ad&#243;w PL-1992 oraz PL-2000<a class="anchor-link" href="#Obliczenie-p%C3%B3l-powierzchni-czworoboku-na-p%C5%82aszczy%C5%BAnie-uk%C5%82ad%C3%B3w-PL-1992-oraz-PL-2000">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">polepl2000</span> <span class="o">=</span> <span class="p">(</span><span class="n">pl2000</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">pl2000</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pl2000</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">pl2000</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">pl2000</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pl2000</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">pl2000</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">pl2000</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pl2000</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">pl2000</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">pl2000</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pl2000</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pole powierzchni na płaszczyźnie PL-2000: &quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">polepl2000</span><span class="p">),</span> <span class="s2">&quot;m², czyli &quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">polepl2000</span><span class="o">/</span><span class="mi">1000000</span><span class="p">),</span> <span class="s2">&quot;km²&quot;</span><span class="p">)</span>
+
+<span class="n">polepl1992</span> <span class="o">=</span> <span class="p">(</span><span class="n">pl1992</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">pl1992</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pl1992</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">pl1992</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">pl1992</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pl1992</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">pl1992</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">pl1992</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pl1992</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">pl1992</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">pl1992</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pl1992</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pole powierzchni na płaszczyźnie PL-1992: &quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">polepl1992</span><span class="p">),</span> <span class="s2">&quot;m², czyli &quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">polepl1992</span><span class="o">/</span><span class="mi">1000000</span><span class="p">),</span> <span class="s2">&quot;km²&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Pole powierzchni na płaszczyźnie PL-2000:  4016201746.26 m², czyli  4016.20 km²
+Pole powierzchni na płaszczyźnie PL-1992:  4010026395.26 m², czyli  4010.03 km²
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Transformacja-wsp%C3%B3%C5%82rz%C4%99dnych-punkt%C3%B3w-do-uk%C5%82adu-PL-LAEA-z-wykorzystaniem-biblioteki-pyproj-oraz-obliczenie-pola-powierzchni-czworoboku-na-p%C5%82aszczy%C5%BAnie-uk%C5%82adu-PL-LAEA">Transformacja wsp&#243;&#322;rz&#281;dnych punkt&#243;w do uk&#322;adu PL-LAEA z wykorzystaniem biblioteki pyproj oraz obliczenie pola powierzchni czworoboku na p&#322;aszczy&#378;nie uk&#322;adu PL-LAEA<a class="anchor-link" href="#Transformacja-wsp%C3%B3%C5%82rz%C4%99dnych-punkt%C3%B3w-do-uk%C5%82adu-PL-LAEA-z-wykorzystaniem-biblioteki-pyproj-oraz-obliczenie-pola-powierzchni-czworoboku-na-p%C5%82aszczy%C5%BAnie-uk%C5%82adu-PL-LAEA">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyproj</span> <span class="kn">import</span> <span class="n">CRS</span><span class="p">,</span> <span class="n">Transformer</span>
+
+<span class="n">output_proj</span> <span class="o">=</span> <span class="n">CRS</span><span class="o">.</span><span class="n">from_epsg</span><span class="p">(</span><span class="mi">3035</span><span class="p">)</span>
+<span class="n">input_proj</span> <span class="o">=</span> <span class="n">CRS</span><span class="o">.</span><span class="n">from_epsg</span><span class="p">(</span><span class="mi">4326</span><span class="p">)</span>
+
+<span class="n">transformer</span> <span class="o">=</span> <span class="n">Transformer</span><span class="o">.</span><span class="n">from_crs</span><span class="p">(</span><span class="n">input_proj</span><span class="p">,</span> <span class="n">output_proj</span><span class="p">)</span>
+
+<span class="n">plalea</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+    <span class="n">plalea</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">transformer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="n">polepllaea</span> <span class="o">=</span> <span class="p">(</span><span class="n">plalea</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">plalea</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">plalea</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">plalea</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">plalea</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">plalea</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">plalea</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">plalea</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">plalea</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">plalea</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">plalea</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">plalea</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pole powierzchni na płaszczyźnie PL-LAEA: &quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">polepllaea</span><span class="p">),</span> <span class="s2">&quot;m², czyli &quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">polepllaea</span><span class="o">/</span><span class="mi">1000000</span><span class="p">),</span> <span class="s2">&quot;km²&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Pole powierzchni na płaszczyźnie PL-LAEA:  4015252907.09 m², czyli  4015.25 km²
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Zestawienie-wynik%C3%B3w">Zestawienie wynik&#243;w<a class="anchor-link" href="#Zestawienie-wynik%C3%B3w">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Tabela-przedstawiaj%C4%85ca-wsp%C3%B3%C5%82rz%C4%99dne-geodezyjne-punkt%C3%B3w-oraz-obliczone-wsp%C3%B3%C5%82rz%C4%99dne-uk%C5%82adach-PL-1992,-PL-2000-oraz-Gaussa-Kr%C3%BCgera">Tabela przedstawiaj&#261;ca wsp&#243;&#322;rz&#281;dne geodezyjne punkt&#243;w oraz obliczone wsp&#243;&#322;rz&#281;dne uk&#322;adach PL-1992, PL-2000 oraz Gaussa-Kr&#252;gera<a class="anchor-link" href="#Tabela-przedstawiaj%C4%85ca-wsp%C3%B3%C5%82rz%C4%99dne-geodezyjne-punkt%C3%B3w-oraz-obliczone-wsp%C3%B3%C5%82rz%C4%99dne-uk%C5%82adach-PL-1992,-PL-2000-oraz-Gaussa-Kr%C3%BCgera">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Punkt&#39;</span><span class="p">])</span>
+<span class="n">wf</span><span class="p">[</span><span class="s1">&#39;φ[°]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">points</span><span class="p">])</span>
+<span class="n">wf</span><span class="p">[</span><span class="s1">&#39;λ[°]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">points</span><span class="p">])</span>
+<span class="n">wf</span><span class="p">[</span><span class="s1">&#39;Xgk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gk00</span><span class="p">])</span>
+<span class="n">wf</span><span class="p">[</span><span class="s1">&#39;Ygk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gk00</span><span class="p">])</span>
+<span class="n">wf</span><span class="p">[</span><span class="s1">&#39;X2000&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pl2000</span><span class="p">])</span>
+<span class="n">wf</span><span class="p">[</span><span class="s1">&#39;Y2000&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pl2000</span><span class="p">])</span>
+<span class="n">wf</span><span class="p">[</span><span class="s1">&#39;X1992&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pl1992</span><span class="p">])</span>
+<span class="n">wf</span><span class="p">[</span><span class="s1">&#39;Y1992&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pl1992</span><span class="p">])</span>
+<span class="n">wf</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> 
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.float_format&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">wf</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Punkt</th>
+      <th>φ[°]</th>
+      <th>λ[°]</th>
+      <th>Xgk</th>
+      <th>Ygk</th>
+      <th>X2000</th>
+      <th>Y2000</th>
+      <th>X1992</th>
+      <th>Y1992</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>51.000</td>
+      <td>19.000</td>
+      <td>5652561.812</td>
+      <td>70196.940</td>
+      <td>5652126.564</td>
+      <td>6570191.535</td>
+      <td>348129.263</td>
+      <td>500000.000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>51.360</td>
+      <td>19.000</td>
+      <td>5692560.513</td>
+      <td>69652.977</td>
+      <td>5692122.186</td>
+      <td>6569647.614</td>
+      <td>388101.263</td>
+      <td>500000.000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>51.351</td>
+      <td>20.435</td>
+      <td>5693924.194</td>
+      <td>169662.276</td>
+      <td>5693485.762</td>
+      <td>6669649.212</td>
+      <td>388101.263</td>
+      <td>599934.089</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>50.991</td>
+      <td>20.435</td>
+      <td>5653931.898</td>
+      <td>170987.382</td>
+      <td>5653496.546</td>
+      <td>6670974.216</td>
+      <td>348131.934</td>
+      <td>600714.357</td>
+    </tr>
+  </tbody>
 </table>
 </div>
 </div>
+
 </div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14955,81 +15596,10 @@ Współrzędne punktu 1* wynoszą 50°58&#39;57.08648&#34; 19°00&#39;40.99454&#
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Obliczenie-r%C3%B3%C5%BCnicy-po%C5%82o%C5%BCenia-mi%C4%99dzy-punktem-1-i-1*">Obliczenie r&#243;&#380;nicy po&#322;o&#380;enia mi&#281;dzy punktem 1 i 1*<a class="anchor-link" href="#Obliczenie-r%C3%B3%C5%BCnicy-po%C5%82o%C5%BCenia-mi%C4%99dzy-punktem-1-i-1*">&#182;</a></h3>
+<h4 id="Tabela-przedstawiaj%C4%85ca-d%C5%82ugo%C5%9B%C4%87-odcink%C3%B3w-na-elipsoidzie-po-wykonaniu-redukcji-d%C5%82ugo%C5%9Bci">Tabela przedstawiaj&#261;ca d&#322;ugo&#347;&#263; odcink&#243;w na elipsoidzie po wykonaniu redukcji d&#322;ugo&#347;ci<a class="anchor-link" href="#Tabela-przedstawiaj%C4%85ca-d%C5%82ugo%C5%9B%C4%87-odcink%C3%B3w-na-elipsoidzie-po-wykonaniu-redukcji-d%C5%82ugo%C5%9Bci">&#182;</a></h4>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Na podstawie otrzymanych wyników da się zauważyć, że zwrócone przez funkcję <i>kivioj</i> współrzędne punktu 1* różnią się od współrzędnych, danych na początku w zadaniu. Różnicę tę można obliczyć z wykorzystaniem algorytmu Vincentego, którego implementacja została dołączona wraz z instrukcją do zadania.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">vincenty</span><span class="p">(</span><span class="n">BA</span><span class="p">,</span><span class="n">LA</span><span class="p">,</span><span class="n">BB</span><span class="p">,</span><span class="n">LB</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    BA : szerokosc geodezyjna punktu A [RADIAN]</span>
-<span class="sd">    LA : dlugosc geodezyjna punktu A [RADIAN]</span>
-<span class="sd">    BB : szerokosc geodezyjna punktu B [RADIAN]</span>
-<span class="sd">    LB : dlugosc geodezyjna punktu B [RADIAN]</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    sAB : dlugosc linii geodezyjnej AB [METR]</span>
-<span class="sd">    A_AB : azymut linii geodezyjnej AB [RADIAN]</span>
-<span class="sd">    A_BA : azymut odwrotny linii geodezyjne [RADIAN]</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e2</span><span class="p">)</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="n">a</span>
-    <span class="n">dL</span> <span class="o">=</span> <span class="n">LB</span> <span class="o">-</span> <span class="n">LA</span>
-    <span class="n">UA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">f</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">BA</span><span class="p">))</span>
-    <span class="n">UB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">f</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">BB</span><span class="p">))</span>
-    <span class="n">L</span> <span class="o">=</span> <span class="n">dL</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">sin_sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">L</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span>\
-                          <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">L</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">cos_sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-        <span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">sin_sig</span><span class="p">,</span><span class="n">cos_sig</span><span class="p">)</span>
-        <span class="n">sin_al</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">L</span><span class="p">))</span><span class="o">/</span><span class="n">sin_sig</span>
-        <span class="n">cos2_al</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">sin_al</span><span class="o">**</span><span class="mi">2</span>
-        <span class="n">cos2_sigm</span> <span class="o">=</span> <span class="n">cos_sig</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">UB</span><span class="p">))</span><span class="o">/</span><span class="n">cos2_al</span>
-        <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos2_al</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">cos2_al</span><span class="p">))</span>
-        <span class="n">Lst</span> <span class="o">=</span> <span class="n">L</span>
-        <span class="n">L</span> <span class="o">=</span> <span class="n">dL</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">C</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">sin_al</span><span class="o">*</span><span class="p">(</span><span class="n">sig</span><span class="o">+</span><span class="n">C</span><span class="o">*</span><span class="n">sin_sig</span><span class="o">*</span><span class="p">(</span><span class="n">cos2_sigm</span><span class="o">+</span><span class="n">C</span><span class="o">*</span><span class="n">cos_sig</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">cos2_sigm</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
-        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">Lst</span><span class="p">)</span><span class="o">&lt;</span><span class="p">(</span><span class="mf">0.000001</span><span class="o">/</span><span class="mi">206265</span><span class="p">):</span>
-            <span class="k">break</span>
-    
-    <span class="n">u2</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos2_al</span>
-    <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">u2</span><span class="o">/</span><span class="mi">16384</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4096</span> <span class="o">+</span> <span class="n">u2</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">768</span> <span class="o">+</span> <span class="n">u2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">320</span> <span class="o">-</span> <span class="mi">175</span> <span class="o">*</span> <span class="n">u2</span><span class="p">)))</span>
-    <span class="n">B</span> <span class="o">=</span> <span class="n">u2</span><span class="o">/</span><span class="mi">1024</span> <span class="o">*</span> <span class="p">(</span><span class="mi">256</span> <span class="o">+</span> <span class="n">u2</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">128</span> <span class="o">+</span> <span class="n">u2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">74</span> <span class="o">-</span> <span class="mi">47</span> <span class="o">*</span> <span class="n">u2</span><span class="p">)))</span>
-    <span class="n">d_sig</span> <span class="o">=</span> <span class="n">B</span><span class="o">*</span><span class="n">sin_sig</span> <span class="o">*</span> <span class="p">(</span><span class="n">cos2_sigm</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="p">(</span><span class="n">cos_sig</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">cos2_sigm</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>\
-            <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">cos2_sigm</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">sin_sig</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">cos2_sigm</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
-    <span class="n">sAB</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">sig</span><span class="o">-</span><span class="n">d_sig</span><span class="p">)</span>
-    <span class="n">A_AB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">L</span><span class="p">)),(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">L</span><span class="p">)))</span>
-    <span class="n">A_BA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">L</span><span class="p">)),(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">UA</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">UB</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">L</span><span class="p">)))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-    <span class="k">return</span> <span class="n">sAB</span><span class="p">,</span> <span class="n">A_AB</span><span class="p">,</span> <span class="n">A_BA</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15038,9 +15608,13 @@ Współrzędne punktu 1* wynoszą 50°58&#39;57.08648&#34; 19°00&#39;40.99454&#
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s_1_1g</span><span class="p">,</span> <span class="n">az_1_1g</span><span class="p">,</span> <span class="n">az_1g_1</span> <span class="o">=</span> <span class="n">vincenty</span><span class="p">(</span><span class="n">point_1_phi_rad</span><span class="p">,</span> <span class="n">point_1_lam_rad</span><span class="p">,</span> <span class="n">new_points_rad</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_points_rad</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Odległość pomiędzy punktami 1 i 1* wynosi </span><span class="si">{</span><span class="n">s_1_1g</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m.&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mf">40000.000</span><span class="p">,</span> <span class="mf">100000.000</span><span class="p">,</span> <span class="mf">40000.000</span><span class="p">,</span> <span class="mf">100000.000</span><span class="p">]</span>
+<span class="n">dene</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="s1">&#39;1-2&#39;</span><span class="p">,</span> <span class="s1">&#39;2-3&#39;</span><span class="p">,</span> <span class="s1">&#39;3-4&#39;</span><span class="p">,</span> <span class="s1">&#39;4-1&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Odcinek&#39;</span><span class="p">])</span>
+<span class="n">dene</span><span class="p">[</span><span class="s1">&#39;Długość linii geodezyjnej[m]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">dene</span><span class="p">[</span><span class="s1">&#39;Długość odcinka na elipsoidzie w 1992[m]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">length_1992</span><span class="p">)</span>
+<span class="n">dene</span><span class="p">[</span><span class="s1">&#39;Długość odcinka na elipsoidzie w 2000[m]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">length_2000</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.float_format&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">dene</span>
 </pre></div>
 
      </div>
@@ -15058,13 +15632,69 @@ Współrzędne punktu 1* wynoszą 50°58&#39;57.08648&#34; 19°00&#39;40.99454&#
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Odległość pomiędzy punktami 1 i 1* wynosi 2102.147m.
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Odcinek</th>
+      <th>Długość linii geodezyjnej[m]</th>
+      <th>Długość odcinka na elipsoidzie w 1992[m]</th>
+      <th>Długość odcinka na elipsoidzie w 2000[m]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1-2</td>
+      <td>40000.00000</td>
+      <td>40002.40036</td>
+      <td>39999.99997</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2-3</td>
+      <td>100000.00000</td>
+      <td>100014.50718</td>
+      <td>99999.99862</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3-4</td>
+      <td>40000.00000</td>
+      <td>40009.29784</td>
+      <td>39999.99684</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4-1</td>
+      <td>100000.00000</td>
+      <td>100795.56827</td>
+      <td>100780.71586</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -15078,7 +15708,7 @@ Współrzędne punktu 1* wynoszą 50°58&#39;57.08648&#34; 19°00&#39;40.99454&#
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Wyznaczenie-odleg%C5%82o%C5%9Bci-oraz-azymutu-z-punktu-4-do-punktu-1">Wyznaczenie odleg&#322;o&#347;ci oraz azymutu z punktu 4 do punktu 1<a class="anchor-link" href="#Wyznaczenie-odleg%C5%82o%C5%9Bci-oraz-azymutu-z-punktu-4-do-punktu-1">&#182;</a></h3>
+<h4 id="Zestawienie-r%C3%B3%C5%BCnic-d%C5%82ugo%C5%9Bci-odcink%C3%B3w">Zestawienie r&#243;&#380;nic d&#322;ugo&#347;ci odcink&#243;w<a class="anchor-link" href="#Zestawienie-r%C3%B3%C5%BCnic-d%C5%82ugo%C5%9Bci-odcink%C3%B3w">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15090,21 +15720,17 @@ Współrzędne punktu 1* wynoszą 50°58&#39;57.08648&#34; 19°00&#39;40.99454&#
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">rad2dms</span><span class="p">(</span><span class="n">rad</span><span class="p">):</span>
-    <span class="n">dd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span>
-    <span class="n">dd</span> <span class="o">=</span> <span class="n">dd</span>
-    <span class="n">deg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">dd</span><span class="p">))</span>
-    <span class="n">mnt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">((</span><span class="n">dd</span><span class="o">-</span><span class="n">deg</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span><span class="p">))</span>
-    <span class="n">sec</span> <span class="o">=</span> <span class="p">((</span><span class="n">dd</span><span class="o">-</span><span class="n">deg</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">-</span> <span class="n">mnt</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span>
-    <span class="n">dms</span> <span class="o">=</span> <span class="p">[</span><span class="n">deg</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">mnt</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sec</span><span class="p">)]</span>
-    <span class="k">return</span> <span class="n">dms</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">roznice_1992</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+    <span class="n">roznice_1992</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">length_1992</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
-<span class="n">s_4_1</span><span class="p">,</span> <span class="n">az_4_1</span><span class="p">,</span> <span class="n">az_1_4</span> <span class="o">=</span> <span class="n">vincenty</span><span class="p">(</span><span class="n">new_points_rad</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_points_rad</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">point_1_phi_rad</span><span class="p">,</span> <span class="n">point_1_lam_rad</span><span class="p">)</span>
-<span class="n">az_4_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">az_4_1</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="n">d</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">rad2dms</span><span class="p">(</span><span class="n">az_4_1</span><span class="p">)</span>
+<span class="n">roznice_2000</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+    <span class="n">roznice_2000</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">length_2000</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Odległość z punktu 4 do punktu 1 wynosi </span><span class="si">{</span><span class="n">s_4_1</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1"> m, czyli </span><span class="si">{</span><span class="n">s_4_1</span><span class="o">/</span><span class="mi">1000</span><span class="si">:</span><span class="s1">0.6f</span><span class="si">}</span><span class="s1"> km.&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Azymut z punktu 4 do punktu 1 wynosi </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">°</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="se">\&#39;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">0.5f</span><span class="si">}</span><span class="se">\&quot;</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="n">dene</span><span class="p">[</span><span class="s1">&#39;Różnica długości linii geodezyjnej i odcinka na elipsoidzie w 1992 [m]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">roznice_1992</span><span class="p">)</span>
+<span class="n">dene</span><span class="p">[</span><span class="s1">&#39;Różnica długości linii geodezyjnej i odcinka na elipsoidzie w 2000 [m]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">roznice_2000</span><span class="p">)</span>
+<span class="n">dene</span>
 </pre></div>
 
      </div>
@@ -15122,14 +15748,79 @@ Współrzędne punktu 1* wynoszą 50°58&#39;57.08648&#34; 19°00&#39;40.99454&#
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Odległość z punktu 4 do punktu 1 wynosi 100780.718 m, czyli 100.780718 km.
-Azymut z punktu 4 do punktu 1 wynosi 271°06&#39;50.47059&#34;.
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Odcinek</th>
+      <th>Długość linii geodezyjnej[m]</th>
+      <th>Długość odcinka na elipsoidzie w 1992[m]</th>
+      <th>Długość odcinka na elipsoidzie w 2000[m]</th>
+      <th>Różnica długości linii geodezyjnej i odcinka na elipsoidzie w 1992 [m]</th>
+      <th>Różnica długości linii geodezyjnej i odcinka na elipsoidzie w 2000 [m]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1-2</td>
+      <td>40000.00000</td>
+      <td>40002.40036</td>
+      <td>39999.99997</td>
+      <td>2.40036</td>
+      <td>-0.00003</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2-3</td>
+      <td>100000.00000</td>
+      <td>100014.50718</td>
+      <td>99999.99862</td>
+      <td>14.50718</td>
+      <td>-0.00138</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3-4</td>
+      <td>40000.00000</td>
+      <td>40009.29784</td>
+      <td>39999.99684</td>
+      <td>9.29784</td>
+      <td>-0.00316</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4-1</td>
+      <td>100000.00000</td>
+      <td>100795.56827</td>
+      <td>100780.71586</td>
+      <td>795.56827</td>
+      <td>780.71586</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -15143,98 +15834,7 @@ Azymut z punktu 4 do punktu 1 wynosi 271°06&#39;50.47059&#34;.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Wizualizacja-po%C5%82o%C5%BCenia-wszystkich-punkt%C3%B3w">Wizualizacja po&#322;o&#380;enia wszystkich punkt&#243;w<a class="anchor-link" href="#Wizualizacja-po%C5%82o%C5%BCenia-wszystkich-punkt%C3%B3w">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Z wykorzystaniem biblioteki folium zwizualizowano położenie punktów 1*, 1, 2, 3 oraz 4. Na utworzonej mapie widać różnicę w położeniu punktów 1 oraz 1*.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">folium</span>
-
-<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mi">51</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
-
-<span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_points_deg</span><span class="p">)):</span>
-    <span class="n">point_label</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_points_deg</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">new_points_deg</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_points_deg</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span>
-    <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tooltip</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Punkt </span><span class="si">{</span><span class="n">point_label</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">new_points_deg</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">new_points_deg</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-
-<span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">point_1_phi_rad</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">point_1_lam_rad</span><span class="p">)])</span>
-<span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">tooltip</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Punkt 1* </span><span class="si">{</span><span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-
-<span class="n">folium</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-
-<span class="n">m</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;mapa.html&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="mapa.png" /></p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="zoomed_map.png" /></p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Obliczenie-pola-powierzchni-powsta%C5%82ej-figury">Obliczenie pola powierzchni powsta&#322;ej figury<a class="anchor-link" href="#Obliczenie-pola-powierzchni-powsta%C5%82ej-figury">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Z wykorzystaniem biblioteki <i>pyproj</i>, a dokładniej modułu Geod, obliczono pole powierzchni figury, powstałej z połączenia wszystkich punktów. Użyto do tego funkcji <i>geometry_area_perimeter</i>, wcześniej tworząc polygon z punktów z użyciem biblioteki <i>shapely</i>.</p>
-
+<h4 id="Zestawienie-p%C3%B3l-powierzchni-czworoboku-w-uk%C5%82adach-PL-2000,-PL-1992,-PL-LAEA-oraz-na-powierzchni-elipsoidy">Zestawienie p&#243;l powierzchni czworoboku w uk&#322;adach PL-2000, PL-1992, PL-LAEA oraz na powierzchni elipsoidy<a class="anchor-link" href="#Zestawienie-p%C3%B3l-powierzchni-czworoboku-w-uk%C5%82adach-PL-2000,-PL-1992,-PL-LAEA-oraz-na-powierzchni-elipsoidy">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15246,18 +15846,12 @@ Azymut z punktu 4 do punktu 1 wynosi 271°06&#39;50.47059&#34;.
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyproj</span> <span class="kn">import</span> <span class="n">Geod</span>
-<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span>
-
-<span class="n">geod</span> <span class="o">=</span> <span class="n">Geod</span><span class="p">(</span><span class="n">ellps</span><span class="o">=</span><span class="s1">&#39;GRS80&#39;</span><span class="p">)</span>
-<span class="n">poly</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
-
-<span class="n">lons</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">lats</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="n">area</span> <span class="o">=</span> <span class="o">-</span><span class="n">geod</span><span class="o">.</span><span class="n">polygon_area_perimeter</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Pole powierzchni wynosi </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> m^2, czyli </span><span class="si">{</span><span class="n">area</span><span class="o">/</span><span class="mi">1000000</span><span class="si">:</span><span class="s1">.12f</span><span class="si">}</span><span class="s1"> km^2.&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pola</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">polepl2000</span><span class="p">,</span> <span class="n">polepl1992</span><span class="p">,</span> <span class="n">polepllaea</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pole [km²]&#39;</span><span class="p">])</span>
+<span class="n">pola</span><span class="p">[</span><span class="s1">&#39;Układ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PL-2000&#39;</span><span class="p">,</span> <span class="s1">&#39;PL-1992&#39;</span><span class="p">,</span> <span class="s1">&#39;PL-LAEA&#39;</span><span class="p">]</span>
+<span class="n">pola</span><span class="p">[</span><span class="s1">&#39;Pole [km²]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pola</span><span class="p">[</span><span class="s1">&#39;Pole [km²]&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000000</span>
+<span class="n">pola</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4113.295698406223</span><span class="p">,</span> <span class="s1">&#39;Elipsoida&#39;</span><span class="p">]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.float_format&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">pola</span>
 </pre></div>
 
      </div>
@@ -15275,13 +15869,59 @@ Azymut z punktu 4 do punktu 1 wynosi 271°06&#39;50.47059&#34;.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Pole powierzchni wynosi 4113295698.406223 m^2, czyli 4113.295698406223 km^2.
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pole [km²]</th>
+      <th>Układ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4016.202</td>
+      <td>PL-2000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4010.026</td>
+      <td>PL-1992</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4015.253</td>
+      <td>PL-LAEA</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4113.296</td>
+      <td>Elipsoida</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -15295,7 +15935,15 @@ Azymut z punktu 4 do punktu 1 wynosi 271°06&#39;50.47059&#34;.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Wniosek">Wniosek<a class="anchor-link" href="#Wniosek">&#182;</a></h3><p>Figura utworzona przez obliczone współrzędne punktów na elipsoidzie nie zamyka się. Współrzędne 1 i 1* są różne. Jest między nimi ponad 2km różnicy. Wynika to z tego, że elipsoida obrotowa nie jest dokładnym modelem Ziemi.</p>
+<h3 id="Analizy-i-wnioski">Analizy i wnioski<a class="anchor-link" href="#Analizy-i-wnioski">&#182;</a></h3><ul>
+<li>Obydwa układy - PL-1992 i PL-2000 są oparte na tym samym układzie Gaussa-Krügera. Współrzędne liczy się w podobny sposób.</li>
+<li>W przypadku układu PL-1992 cały obszar Polski jest objęty jednym pasem południkowym. Południkiem osiowym jest południk 19° szerokości geograficznej wschodniej. W układzie PL-2000 obszar Polski podzielony jest na 4 pasy południkowe, o szerokości 3° każdy (południki osiowe 15°, 18°, 21°, 24°). A więc występuje tu różnica w wyborze odpowiedniego południka.</li>
+<li>W moim przypadku pierwszy i drugi punkt miał długość geograficzną 19°E, a więc znajdował się na południku osiowym układu PL-1992. W układzie PL-2000 pierwszy punkt znajdował się najbliżej południka osiowego 18°E.</li>
+<li>Długości odcinków w układzie PL-1992 są większe niż w układzie PL-2000.</li>
+<li>Zniekształcenia w układzie PL-2000 są mniejsze niż w układzie PL-1992.</li>
+<li>Odcinek 1-2, mimo tego, że leży na południku osiowym układu PL-1992 ma w tym układzie długość bardziej oddaloną od długości 1-2 z ćwiczenia nr 3 niż w układzie PL-2000. A więc zniekształcenia nie rosną wraz z oddalaniem się od południka osiowego układu.</li>
+<li>Pole powierzchni czworoboku jest podobne w układach PL-2000 i PL-LAEA. W przypadku PL-1992 wynosi kilka kilometrów kwadratowych mniej. Pole powierzchni na elipsoidzie jest dużo większe - różnica wynosi średnio około sto kilometrów kwadratowych.</li>
+</ul>
 
 </div>
 </div>
