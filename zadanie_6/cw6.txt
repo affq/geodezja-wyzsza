@@ -1,0 +1,5 @@
+link do serwera z danymi:
+http://geodesy.unr.edu/gps_timeseries/txyz/IGS14/
+
+Przegląd szeregów czasowych położenia stacji EUREF:
+http://epncb.eu/_productsservices/timeseries/index.php?station=JOZ200POL&type=ITRS
