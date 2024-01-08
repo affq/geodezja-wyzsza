@@ -65,35 +65,36 @@ for phi, lam in zip(phis, lams):
 
 df['HN'] = df['hel'] - np.array(dzety)
 
-
-# obliczenie różnic wysokości normalnych między kronsztadem a amsterdamem
 df['HN_diff'] = df['HN'] - df['elevation']
 
-fig = go.Figure(data=go.Scatter(x=df['distance']/1000, y=df['HN_diff'], mode='lines'))
-fig.update_layout(title='Różnica wysokości normalnych między kronsztadem (2011-KRON86-NH) a amsterdamem(2021-EVRF2007-NH)',
+fig = go.Figure(data=go.Scatter(x=df['distance']/1000, y=df['HN_diff'], mode='lines', hovertemplate='Dystans: %{x:.2f} km<br>Różnica wysokości normalnych: %{y:.4f} m<extra></extra>'))
+fig.update_layout(title='Różnica wysokości normalnych między 2011-KRON86-NH a 2021-EVRF2007-NH',
                   xaxis_title='Dystans [km]',
                   yaxis_title='Różnica wysokości normalnych [m]')
 fig.show()
 
 #profil trasy - wysokość elipsoidalna
-fig = go.Figure(data=go.Scatter(x=df['distance']/1000, y=df['hel'], mode='lines'))
+fig = go.Figure(data=go.Scatter(x=df['distance']/1000, y=df['hel'], mode='lines', hovertemplate='Dystans: %{x:.2f} km<br>Wysokość elipsoidalna: %{y:.2f} m<extra></extra>', fill='tozeroy'))
 fig.update_layout(title='Profil trasy - wysokość elipsoidalna',
                   xaxis_title='Dystans [km]',
                   yaxis_title='Wysokość elipsoidalna [m]')
+fig.update_yaxes(range=[100, 200])
 fig.show()
 
 #profil trasy - 2021-EVRF2007-NH
-fig = go.Figure(data=go.Scatter(x=df['distance']/1000, y=df['HN'], mode='lines'))
+fig = go.Figure(data=go.Scatter(x=df['distance']/1000, y=df['HN'], mode='lines', hovertemplate='Dystans: %{x:.2f} km<br>Wysokość normalna: %{y:.2f} m<extra></extra>', fill='tozeroy'))
 fig.update_layout(title='Profil trasy - 2021-EVRF2007-NH',
                   xaxis_title='Dystans [km]',
                   yaxis_title='Wysokość normalna [m]')
+fig.update_yaxes(range=[100, 200])
 fig.show()
 
 # profil trasy - 2011-KRON86-NH
-fig = go.Figure(data=go.Scatter(x=df['distance']/1000, y=df['elevation'], mode='lines'))
+fig = go.Figure(data=go.Scatter(x=df['distance']/1000, y=df['elevation'], mode='lines', hovertemplate='Dystans: %{x:.2f} km<br>Wysokość normalna: %{y:.2f} m<extra></extra>', fill='tozeroy'))
 fig.update_layout(title='Profil trasy - 2011-KRON86-NH',
                   xaxis_title='Dystans [km]',
                   yaxis_title='Wysokość normalna [m]')
+fig.update_yaxes(range=[100, 200])
 fig.show()
 
 
