@@ -5,3 +5,4 @@ to repozytorium zawiera projekty z <i><b>WDGW</b></i>:
 <li>Zadanie 3: Przeniesienie współrzednych geodezyjnych na powierzchni elipsoidy obrotowej</li>
 <li>Zadanie 4: Odwzorowanie Gaussa-Krügera: układy współrzędnych płaskich stosowanych w Polsce</li>
 <li>Zadanie 5: Systemy wysokości: niwelacja satelitarna - wysokości normalne</li>
+<li>Zadanie 6: Nie wiem nawet</li>
